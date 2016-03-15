@@ -34,17 +34,6 @@ public class RunnerTower {
     
     private static final Map<Integer, List<Integer>> towerWithKey = new LinkedHashMap<>();
     
-    /**numeroDaTorreDeSaida = torre de saída
-    * numeroDaTorreDeEntrada = torre de entrada
-
-    * Buscar a torre de 
-    * entrada em {@link towerWithKey}, filtrando pelo parâmetro torreDeEntrada, 
-    * remover a peça escolhida da torreDeSaida, e inserir a peça na torreDeEntrada, 
-    * peça será pega pelo tamanho da lista - 1 (zero Index).
-
-    * Permitir continuar a execução, mesmo se não tiver disco na torre inicial.
-     * @param args
-    */
     public static void main(String[] args) {
         List<Integer> towerOne = new LinkedList<>();
         List<Integer> towerTwo = new LinkedList<>();
