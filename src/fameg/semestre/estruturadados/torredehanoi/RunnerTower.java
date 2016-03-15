@@ -73,6 +73,9 @@ public class RunnerTower {
             if(towerOut == towerIn) {
                 System.out.println("Something is wrong! try again.");
                 System.out.println("Continuing....");
+                /*FIXME: Descobrir melhor forma de permitir continuar a execução,
+                    pois não dá pra utilizar continue fora do loop.
+                */
             }
             
             removeAndPut(towerIn, towerOut);
@@ -87,12 +90,14 @@ public class RunnerTower {
     private static void removeAndPut(int towerIn, int towerOut){
         if(!haveDiskInTower(towerWithKey.get(towerOut))) {
             System.out.println("Continuing....");
+            /*FIXME: Descobrir melhor forma de permitir continuar a execução,
+            pois não dá pra utilizar continue fora do loop.
+            */
         }
-        List<Integer> torreDeEntrada = towerWithKey.get(towerIn);
-        List<Integer> torreDeSaida = towerWithKey.get(towerOut);
-        
-        torreDeEntrada.add(torreDeSaida.size() - 1);
-        torreDeSaida.remove(torreDeSaida.get(torreDeSaida.size() - 1));
+        //Insere a peça na torre de entrada
+        towerWithKey.get(towerIn).add(towerWithKey.get(towerOut).size() - 1);
+        //Remove a peça na torre de saída
+        towerWithKey.get(towerOut).remove(towerWithKey.get(towerOut).get(towerWithKey.get(towerOut).size() - 1));
     }
     
     private static void showTowers(List tower1, List tower2, List tower3) {
