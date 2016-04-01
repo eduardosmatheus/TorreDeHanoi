@@ -130,12 +130,12 @@ public class TowerGame {
         println("**************");
         TORRES.keySet().stream().forEach(o -> {
             println("Torre " + o);
-            TORRES.get(o).stream().sorted((a,b) -> a.compareTo(b)).forEach(
-                t -> println(DISCO_IMAGENS.get(t)
-                ));
+            TORRES.get(o).stream()
+                    .sorted((a, b) -> a.compareTo(b))
+                    .forEach(t -> println(DISCO_IMAGENS.get(t)));
         });
     }
-    
+
     private void validaDiscosNaTorre(int torre) throws InvalidMovementException {
         boolean result = existeDiscoNaTorre(torre);
         if(!result) throw new InvalidMovementException("Não existem discos na torre. ");
