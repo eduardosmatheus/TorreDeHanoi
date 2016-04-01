@@ -9,7 +9,7 @@ public class Runner {
         try {
             TowerGame towerGame = new TowerGame();
             towerGame.play();
-        }catch(WinException e) {
+        } catch(WinException e) {
             System.out.println(e.getMessage());
         }
     }
